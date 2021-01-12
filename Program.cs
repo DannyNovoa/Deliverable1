@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace PasswordDev1
 {
@@ -18,6 +19,18 @@ namespace PasswordDev1
                "3. A Minimum of 7 characters  \n"    +
                "4. A Maximum of 12 characters \n"   +
                "5. An exclamation pouint: !   \n" );
+
+            string userPassword = Console.ReadLine();
+
+            if (userPassword.Any(char.IsUpper) && userPassword.Any(char.IsLower) 
+                && userPassword.Length >= 7 && userPassword.Contains("!"))
+            {
+                Console.WriteLine("Password is valid and accepted ");
+            }
+            else
+            {
+                Console.WriteLine("Sorry this is: No Bueno ");
+            }
 
             Console.ReadKey();
         }
